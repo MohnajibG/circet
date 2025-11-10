@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* Réinitialisation de base */
+body {
+  margin: 0 0;
+  overflow-x: hidden;
+}
+main {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, white, #ff9d35d9);
+  backdrop-filter: blur(40px);
+  overflow-x: hidden;
+}
+/* Shimmer déjà utilisé */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+/* Optionnel: adoucir le scrolling iOS */
+html {
+  scroll-behavior: smooth;
+}
