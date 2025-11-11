@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import AddressInput from "./UI/AddressInput.jsx";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { db } from "../firebase";
@@ -47,9 +48,15 @@ export default function BuildingDetail({ buildingId, currentUser }) {
   );
 
   // 🏗️ Fonctions Firestore
-  async function updateAddress(v) {
-    await updateDoc(doc(db, "buildings", buildingId), { address: v });
+  async function updateAddress(address, lat, lng) {
+    const updateData = { address };
+    if (lat && lng) {
+      updateData.lat = lat;
+      updateData.lng = lng;
+    }
+    await updateDoc(doc(db, "buildings", buildingId), updateData);
   }
+
   async function updateFloors(v) {
     const n = Math.max(1, Number(v) || 1);
     await updateDoc(doc(db, "buildings", buildingId), { floorsCount: n });
@@ -234,10 +241,12 @@ export default function BuildingDetail({ buildingId, currentUser }) {
         className="flex flex-wrap items-end gap-3 bg-white border rounded-xs p-4 shadow-sm"
       >
         <div className="min-w-[280px]">
-          <TextInput
+          <AddressInput
             label="Adresse"
             value={building.address || ""}
-            onChange={updateAddress}
+            onChange={({ address, lat, lng }) => {
+              updateAddress(address, lat, lng);
+            }}
           />
         </div>
         <div className="w-44">
