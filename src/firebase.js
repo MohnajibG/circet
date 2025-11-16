@@ -1,14 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-
 const firebaseConfig = {
-  apiKey: "AIzaSyAmS_1U-ElVHiM2SPzYDC8bwzSFw8PuqbU",
-  authDomain: "circet-16342.firebaseapp.com",
-  projectId: "circet-16342",
-  storageBucket: "circet-16342.appspot.com",
-  messagingSenderId: "60790213021",
-  appId: "1:60790213021:web:465a764c17c9c0c690c774",
+  apiKey: "AIzaSyChXCddioiLRbb8l3_v4diSpwlO5KReW2U",
+  authDomain: "portes-d8860.firebaseapp.com",
+  projectId: "portes-d8860",
+  storageBucket: "portes-d8860.firebasestorage.app",
+  messagingSenderId: "802002675994",
+  appId: "1:802002675994:web:fd4a79a7ee1e78839424a3",
+  measurementId: "G-NDKTZRMKZB",
 };
 
 const app = initializeApp(firebaseConfig);
