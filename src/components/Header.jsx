@@ -22,7 +22,7 @@ export default function Header({ user }) {
     >
       {/* --- Logo + Titre --- */}
       <motion.div
-        className="flex items-center gap-4"
+        className="flex items-center gap-10 md:gap-4"
         whileHover={{ scale: 1.02 }}
         transition={{ type: "spring", stiffness: 200 }}
       >
@@ -43,7 +43,7 @@ export default function Header({ user }) {
         {/* Texte principal */}
         <div className="flex flex-col leading-tight">
           <span className="text-lg font-extrabold tracking-tight">
-            Porte-à-Porte Fibre
+            PAP Fibre
           </span>
           <span className="text-xs opacity-90">
             Circet / Orange · Gestion des visites
