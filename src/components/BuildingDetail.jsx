@@ -50,7 +50,13 @@ export default function BuildingDetail({ buildingId, currentUser }) {
   // ----------------------------------------------------------
   const floors = useMemo(() => {
     const count = Math.max(1, Number(building?.floorsCount || 1));
-    return Array.from({ length: count }, (_, i) => i + 1);
+
+    const numericFloors = Array.from(
+      { length: count },
+      (_, i) => i + 1
+    ).reverse();
+
+    return [...numericFloors, "RDC"];
   }, [building?.floorsCount]);
 
   // ----------------------------------------------------------
